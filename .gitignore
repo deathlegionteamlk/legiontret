@@ -1,0 +1,42 @@
+# Binaries
+legiontret
+dist/
+*.exe
+
+# Build artifacts
+*.o
+*.a
+*.so
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (downloaded at runtime)
+*.gguf
+
+# Config
+.env
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+
+# Go
+vendor/

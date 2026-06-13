@@ -1,0 +1,24 @@
+# Modelfile example for LegionTret
+# Create custom models from GGUF files
+
+FROM ./my-model.gguf
+
+# Optional: Set a custom system prompt
+SYSTEM You are a helpful assistant specialized in creative writing.
+
+# Optional: Set generation parameters
+PARAMETER temperature 0.8
+PARAMETER top_p 0.9
+PARAMETER top_k 40
+PARAMETER num_predict 2048
+
+# Optional: Set a chat template
+TEMPLATE """
+{{- if .System }}System: {{ .System }}
+{{- end }}
+{{- range .Messages }}
+{{- if eq .Role "user" }}User: {{ .Content }}
+{{- else if eq .Role "assistant" }}Assistant: {{ .Content }}
+{{- end }}
+{{- end }}
+Assistant: """

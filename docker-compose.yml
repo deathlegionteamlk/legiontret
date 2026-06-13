@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  legiontret:
+    build: .
+    container_name: legiontret
+    ports:
+      - "11434:11434"
+    volumes:
+      - legiontret-models:/root/.legiontret/models
+    environment:
+      - LEGIONTRET_HOST=0.0.0.0
+      - LEGIONTRET_PORT=11434
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  legiontret-models:
+    driver: local
