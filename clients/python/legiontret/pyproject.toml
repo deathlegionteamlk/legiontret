@@ -1,11 +1,11 @@
 [build-system]
-requires = ["setuptools>=61.0", "requests>=2.28.0"]
-build-backend = "setuptools.backends._legacy:_Backend"
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "legiontret"
 version = "1.0.0"
-description = "Python client for LegionTret - Run LLMs locally"
+description = "Python client for LegionTret - Run LLMs locally. Simple. Fast. Free."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
@@ -13,9 +13,17 @@ dependencies = [
     "requests>=2.28.0",
 ]
 authors = [
-    {name = "Death Legion Team"},
+    {name = "Death Legion Team", email = "deathlegionteam@users.noreply.github.com"},
 ]
-keywords = ["llm", "ai", "legiontret", "ollama", "gemma", "llama", "mistral"]
+keywords = [
+    "llm", "ai", "legiontret", "ollama", "gemma", "llama", "mistral",
+    "local-ai", "local-llm", "language-model", "chatbot", "inference",
+    "deepseek", "qwen", "phi", "code-generation", "gguf", "llama-cpp",
+    "text-generation", "ai-assistant", "machine-learning", "nlp",
+    "natural-language-processing", "transformer", "open-source-ai",
+    "on-device-ai", "privacy-ai", "offline-ai", "huggingface",
+    "model-runner", "local-inference"
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -27,8 +35,13 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
 [project.urls]
-Homepage = "https://github.com/deathlegionteam/legiontret"
-Repository = "https://github.com/deathlegionteam/legiontret"
+Homepage = "https://github.com/deathlegionteamlk/legiontret"
+Repository = "https://github.com/deathlegionteamlk/legiontret"
+Documentation = "https://github.com/deathlegionteamlk/legiontret#readme"
+
+[tool.setuptools.packages.find]
+include = ["legiontret*"]
